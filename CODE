@@ -1,0 +1,55 @@
+TEMPERATURE MONITORING SYSTEM CODE
+
+
+#include <stdio.h>
+
+void temperature_check(float temperature) {
+    if (temperature <= -45) {
+        printf("CRITICAL ALERT: Extreme cold!\n");
+    }
+    else if (temperature <= -20) {
+        printf("WARNING: Abnormally cold\n");
+    }
+    else if (temperature < 50) {
+        printf("Temperature is NORMAL\n");
+    }
+    else if (temperature < 75) {
+        printf("WARNING: Temperature rising\n");
+    }
+    else {
+        printf("CRITICAL ALERT: Extreme heat!\n");
+    }
+}
+
+int main() {
+    float temperature;
+    char c;
+
+    while (1) {
+
+        printf("Enter the temperature: ");
+
+        if (scanf("%f", &temperature) != 1) {
+            printf("Invalid input! Please enter a numeric value.\n");
+            while (getchar() != '\n');
+            continue;
+        }
+
+        temperature_check(temperature);
+
+        while (1) {
+            printf("Do you want to continue? (y/n): ");
+            scanf(" %c", &c);
+
+            if (c == 'n' || c == 'N') {
+                return 0;
+            }
+            else if (c == 'y' || c == 'Y') {
+                break;
+            }
+            else {
+                printf("Invalid input! Please enter y or n.\n");
+            }
+        }
+    }
+}
