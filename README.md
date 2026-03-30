@@ -11,7 +11,7 @@ This project was built to practice:
 
 ---
 
-## 📌 Features
+## Features
 
 - Accepts real-time temperature input from the user
 - Classifies temperature into:
@@ -23,7 +23,7 @@ This project was built to practice:
 
 ---
 
-## 🧠 Temperature Classification Logic
+## Temperature Classification Logic
 
 | Temperature Range (°C) | Status                       |
 |------------------------|------------------------------|
@@ -32,11 +32,3 @@ This project was built to practice:
 | -20 to < 50            | NORMAL                       |
 | 50 to < 75             | WARNING (Temperature rising) |
 | ≥ 75                   | CRITICAL (Extreme heat)      |
-
----
-
-## ▶️ How to Run
-
-1. Compile the program using a C compiler:
-   ```bash
-   gcc main.c -o temperature_monitor
